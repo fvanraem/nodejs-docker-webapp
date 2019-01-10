@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 var WebSocketServer = require('websocket').server;
 var http = require('http');
- 
+var fs = require('fs');
+
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
-    response.writeHead(404);
-    response.end();
+    fs.readFile('./testpage.html', function(err, page) {
+      if (err) {
+        response.writeHead(404);
+        response.end();
+      } else {
+        response.writeHead(200, { 'Content-Type': 'text/html' });
+        response.end(page, 'utf-8');
+      }
+    });
 });
 server.listen(8080, function() {
     console.log((new Date()) + ' Server is listening on port 8080');

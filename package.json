@@ -1,13 +1,15 @@
 {
-  "name": "docker_web_app",
-  "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
-  "main": "server.js",
+  "name": "websocket-demo",
+  "version": "0.1.0",
+  "license" : "MIT",
+  "description": "Node.js websocket demoserver on Docker",
+  "author": "fvanraem <37330756+fvanraem@users.noreply.github.com>",
+  "repository": "github:fvanraem/nodejs-docker-webapp",
+  "main": "websocket.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node websocket.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "websocket": "^1.0.28"
   }
 }
